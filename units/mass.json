@@ -1,0 +1,82 @@
+[
+  [
+    "carat",
+    "ct"
+  ],
+  [
+    "dram",
+    "dr"
+  ],
+  [
+    "dyne",
+    "dyn"
+  ],
+  [
+    "grain",
+    "gr"
+  ],
+  [
+    "gram",
+    "g"
+  ],
+  [
+    "long hundredweight",
+    "long cwt"
+  ],
+  [
+    "short hundredweight",
+    "cental"
+  ],
+  [
+    "libra (roman)",
+    "lb"
+  ],
+  [
+    "metric libra",
+    "lb"
+  ],
+  [
+    "ounce",
+    "oz"
+  ],
+  [
+    "troy ounce",
+    "t oz"
+  ],
+  [
+    "troy pennyweight",
+    "dwt"
+  ],
+  [
+    "pound",
+    "lb"
+  ],
+  [
+    "troy pound",
+    "t lb"
+  ],
+  [
+    "quarter (UK)",
+    "qrt"
+  ],
+  [
+    "quarter (US)",
+    "qrt"
+  ],
+  [
+    "stone",
+    "st"
+  ],
+  [
+    "long ton",
+    "LT"
+  ],
+  [
+    "short ton",
+    "T"
+  ],
+  [
+    "metric ton",
+    "T/t/MT"
+  ]
+]

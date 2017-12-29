@@ -1,0 +1,250 @@
+[
+  [
+    "barrel (UK)",
+    "bbl"
+  ],
+  [
+    "barrel (US | liquid)",
+    "bbl"
+  ],
+  [
+    "barrel (US | dry)",
+    "bbl"
+  ],
+  [
+    "barrel (US | oil)",
+    "bbl"
+  ],
+  [
+    "bucket (UK)",
+    "bkt"
+  ],
+  [
+    "bucket (US)",
+    "bkt"
+  ],
+  [
+    "bushel (UK)",
+    "bsh/bu"
+  ],
+  [
+    "bushel (US | dry)",
+    "bsh/bu"
+  ],
+  [
+    "cubic foot",
+    "scf/cu ft"
+  ],
+  [
+    "cubic inch",
+    "cu in"
+  ],
+  [
+    "cubic meter",
+    "cu m"
+  ],
+  [
+    "cubic mile",
+    "cu mi"
+  ],
+  [
+    "cubic yard",
+    "cu yd"
+  ],
+  [
+    "cup",
+    "C/c"
+  ],
+  [
+    "metric cup",
+    "c/C"
+  ],
+  [
+    "dash (US)",
+    "ds"
+  ],
+  [
+    "dessertspoon (US)",
+    "dstspn"
+  ],
+  [
+    "dessertspoon (UK)",
+    "dstspn"
+  ],
+  [
+    "dram",
+    "fluid drachm/fl dr/f"
+  ],
+  [
+    "dram (UK)",
+    "fluid drachm/fl dr/f"
+  ],
+  [
+    "drop (US | liquid)",
+    "drop"
+  ],
+  [
+    "drum (US | oil)",
+    "dm"
+  ],
+  [
+    "metric drum (oil)",
+    "dm"
+  ],
+  [
+    "fifth (US | liquid)",
+    "short quart/commercial quart"
+  ],
+  [
+    "firkin (UK)",
+    "fir"
+  ],
+  [
+    "firkin (US)",
+    "fir"
+  ],
+  [
+    "gallon (UK)",
+    "gal"
+  ],
+  [
+    "gallon (US | dry)",
+    "d gal"
+  ],
+  [
+    "gallon (US | liquid)",
+    "gal"
+  ],
+  [
+    "gill (UK)",
+    "gill"
+  ],
+  [
+    "gill (US)",
+    "gill"
+  ],
+  [
+    "hogshead (AU)",
+    "Hhd"
+  ],
+  [
+    "hogshead (UK)",
+    "Hhd"
+  ],
+  [
+    "hogshead (US)",
+    "Hhd"
+  ],
+  [
+    "jigger",
+    "j"
+  ],
+  [
+    "liter",
+    "L"
+  ],
+  [
+    "minim (UK)",
+    "min"
+  ],
+  [
+    "minim (US)",
+    "min"
+  ],
+  [
+    "ounce (UK | liquid)",
+    "fl oz"
+  ],
+  [
+    "ounce (US | liquid)",
+    "fl oz"
+  ],
+  [
+    "peck (UK)",
+    "peck"
+  ],
+  [
+    "peck (US)",
+    "peck"
+  ],
+  [
+    "pinch (US)",
+    "pinch"
+  ],
+  [
+    "pint (UK)",
+    "pt"
+  ],
+  [
+    "pint (US | dry)",
+    "pt"
+  ],
+  [
+    "pint (US | liquid)",
+    "pt"
+  ],
+  [
+    "pipe (UK)",
+    "pipe"
+  ],
+  [
+    "pipe (US)",
+    "pipe"
+  ],
+  [
+    "pony",
+    "pony"
+  ],
+  [
+    "quart (UK)",
+    "qt"
+  ],
+  [
+    "quart (US | dry)",
+    "d qt"
+  ],
+  [
+    "quart (US | liquid)",
+    "qt"
+  ],
+  [
+    "shot",
+    "shot"
+  ],
+  [
+    "scruple (UK | liquid)",
+    "s"
+  ],
+  [
+    "tablespoon (UK)",
+    "tbsp"
+  ],
+  [
+    "tablespoon (US)",
+    "tbsp"
+  ],
+  [
+    "tablespoon (AU)",
+    "tbsp"
+  ],
+  [
+    "metric tablespoon",
+    "tbsp"
+  ],
+  [
+    "teaspoon (UK)",
+    "tsp"
+  ],
+  [
+    "teaspoon (US)",
+    "tsp"
+  ],
+  [
+    "teaspoon (AU)",
+    "tsp"
+  ],
+  [
+    "metric teaspoon",
+    "tsp"
+  ]
+]

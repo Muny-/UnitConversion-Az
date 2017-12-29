@@ -1,0 +1,181 @@
+Author: Kevin Smith
+Created: October 16-18th, 2016
+
+[DebugEnabled, false]
+<$az
+// Conversion Table Generator
+
+func conversion_table(unit_names, base_unit_equivelants, unit_type) {
+
+	var conversions = [];
+
+	func source_iterator(index_source) {
+
+		var source_base = base_unit_equivelants(index_source);
+		
+		func target_iterator(index_target) {
+
+			if (index_target != index_source) {
+
+				var target_base = base_unit_equivelants(index_target);
+
+				var conversion_coefficient = -1;
+
+				if (typeof(source_base) != typeof(target_base)) {
+					conversion_coefficient = d(source_base) / d(target_base);
+				} else {
+					conversion_coefficient = source_base / target_base;
+				}
+
+				var conversion_element = [unit_names(index_source), unit_names(index_target), unit_type, conversion_coefficient];
+
+				array_append(conversions, conversion_element);
+			}
+		}
+
+		for(target_iterator, 0, length(unit_names)-1, 1, true);
+	}
+
+	for(source_iterator, 0, length(unit_names)-1, 1, true);
+
+	return conversions;
+}
+
+func write_conversion_table(file, table) {
+
+	if (!file_exists(file)) {
+		file_create(file);	
+	}
+
+	file_write(file, json_stringify(table));
+}
+
+// -=Data=-
+
+writeln('=== STARTING CONVERSIONS ===');
+
+
+// =Mass=
+// Base unit: Grams
+
+writeln('== MASS ==');
+
+write('Reading mass unit names..');
+
+var mass_units = json_parse(file_read('units/mass.json'));
+
+writeln('OK');
+
+write('Instantiating mass gram equivelants...');
+
+var mass_gram_equivelants = [m(0.2), m(1.771845195919311), m(0.0010197162100040397), m(0.06479890999975407), m(1), m(50802.34544057093), m(45359.237001003545), m(323), m(1000), m(28.34952316484755), m(31.103476769649888), m(1.5551738409010598), m(453.5923703803783), m(373.24172160264663), m(12700.586359981426), m(11339.809249993703), m(6350.29317991006), m(1016046.9083984781), m(907184.7407607567), m(1000000)];
+
+writeln('OK');
+
+write('Writing mass conversion table to disk...');
+
+write_conversion_table('coefficients/mass_coefficients.json', conversion_table(mass_units, mass_gram_equivelants, 'mass'));
+
+writeln('OK');
+
+// =Length=
+// Base unit: Meters
+
+writeln('== LENGTH ==');
+
+write('Reading length unit names..');
+
+var length_units = json_parse(file_read('units/length.json'));
+
+writeln('OK');
+
+write('Instantiating length meter equivelants...');
+
+var length_meter_equivelants = [m(1e-10), m(149597870750.76672), m(219.4560000003427), m(20.11679999149623), m(0.45719999930505606), m(0.019050000116205), m(1.8288000005647336), m(0.3048000000012192), m(0.304800609632187), m(201.16799991496225), m(0.10159999994879361), m(0.025400000025908), m(4828.041700099944), m(5556), m(9460528409678268), m(0.002116700000018699), m(0.20116840233921643), m(1), m(0.00002540000002590), m(1609.344000614692), m(1852), m(0.07619999756160008), m(30856774879381896), m(5.029199999897485), m(0.004233333341235555), m(0.00035277777768958333), m(6.095999804928007), m(0.22859999965252803), m(0.000025400000025908), m(9652.509652509652), m(17649.139206741125), m(0.9143999986101121), m(0.9144018380939989)];
+
+writeln('OK');
+
+write('Writing length conversion table to disk...');
+
+write_conversion_table('coefficients/length_coefficients.json', conversion_table(length_units, length_meter_equivelants, 'length'));
+
+writeln('OK');
+
+// =Area=
+// Base unit: Square Meters
+
+writeln('== AREA ==');
+
+write('Reading area unit names..');
+
+var area_units = json_parse(file_read('units/area.json'));
+
+writeln('OK');
+
+write('Instantiating area square meter equivelants...');
+
+var area_square_meter_equivelants = [m(4046.8564300507887), m(100), m(3418.8899999426285), d(1e-28), m(51.07200130744324), m(66.89007953230457), m(0.07296587911188267), m(0.0005067074897244788), m(3930), m(919.0331770976932), m(486000), m(647500), m(1421.2620807276862), m(50000000), m(154.26004541415736), m(716850), m(17919999.999862373), m(34.189999999651945), m(3.3059999999779155), m(1011.714099999727), m(2589998.5000052177), m(9.290303999749462), d(1e-20), m(2.2379523000210913e22), m(404.68564223535765), m(0.20903184000018882), m(0.00036290250878133343), m(3.34450943524908), m(0.09290303999749462), m(0.09290341200263082), m(40468.7259999272), m(0.0006451600000025807), m(0.0006451625833116443), m(30869136), m(23309986), d(8.950541200040898e31), m(0.0404687259999272), m(0.09290341200263082), m(1), d(6.451600000025807e-10), m(2589988.110285327), m(3429904), m(2589998.5000052177), m(0.10549999999979956), d(9.521408699699095e32), m(25.2929540000903), m(51.07200000066025), m(25.292852639837797), m(25.292852639837797), d(6.451600000025807e-10), m(0.8361273600007553), m(0.8361307079770697), m(1000), m(93239571.97655047)];
+
+writeln('OK');
+
+write('Writing area conversion table to disk...');
+
+write_conversion_table('coefficients/area_coefficients.json', conversion_table(area_units, area_square_meter_equivelants, 'area'));
+
+writeln('OK');
+
+// =Volume=
+// Base unit: Liters
+
+writeln('== VOLUME ==');
+
+write('Reading volume unit names..');
+
+var volume_units = json_parse(file_read('units/volume.json'));
+
+writeln('OK');
+
+write('Instantiating volume liter equivelants...');
+
+var volume_liter_equivelants = [m(163.6592399999165), m(119.24047119992625), m(115.62712358057931), m(158.9872949389223), m(18.184359999924588), m(18.92705891986734), m(36.36872000051052), m(35.239070399594006), m(28.316846609230495), m(0.01638706399858543), m(1000), m(4168181818124.979), m(764.5548575832321), m(0.23658823637296003), m(0.25), m(0.0006161151998596874), m(0.009857843187065521), m(0.011838780939700965), m(0.003696691195240674), m(0.0035516330327778514), m(0.00008214869439437025), m(208.1976481197229), m(200), m(0.7570823567946936), m(40.91485618428051), m(34.06864832637765), m(4.546089999981147), m(4.404883799910444), m(3.7854117891320316), m(0.14206531249941085), m(0.11829411824945074), m(295.0026550238952), m(286.40367000219754), m(238.48094240838344), m(0.044360294344199976), m(1), m(0.00005919388020962958), m(0.0000616115199214371), m(0.02841306249988217), m(0.029573529564111873), m(9.092179999962294), m(8.809768010000354), m(0.0003080575999298437), m(0.5682612499976434), m(0.5506104750069959), m(0.47317647274592006), m(490.9777199917142), m(476.96188477126844), m(0.02957352956323728), m(1.1365224999952868), m(1.1012209500018648), m(0.9463529454918401), m(0.02957352956323728), m(0.001183844462915575), m(0.017758164062363288), m(0.014786764780962696), m(0.02), m(0.014999999999925), m(0.005919388020822801), m(0.004928921598877499), m(0.005), m(0.005)];
+
+writeln('OK');
+
+write('Writing volume conversion table to disk...');
+
+write_conversion_table('coefficients/volume_coefficients.json', conversion_table(volume_units, volume_liter_equivelants, 'volume'));
+
+writeln('OK');
+
+// =Luminous intensity=
+// Base unit: Lux
+
+writeln('== LUMINOUS INTENSITY ==');
+
+write('Reading luminous intensity unit names..');
+
+var lum_units = json_parse(file_read('units/luminous_intensity.json'));
+
+writeln('OK');
+
+write('Instantiating luminous intensity lux equivelants...');
+
+var lum_lux_equivelants = [m(10000), m(43.05564166683889), m(10.763910416698137), m(10000), m(10.763910416698137), m(1), m(1), m(1), m(0.001), m(10000), m(6830000)];
+
+writeln('OK');
+
+write('Writing luminous intensity conversion table to disk...');
+
+write_conversion_table('coefficients/luminous_intensity_coefficients.json', conversion_table(lum_units, lum_lux_equivelants, 'luminous intensity'));
+
+writeln('OK');
+
+writeln('== FINISHED ==');
+
+writeln('Finished! Output files are in ../coefficients/');
+
+if (1 == 0) {
+	writeln('wtf?');
+}
+
+az$>
